@@ -1,0 +1,17 @@
+# SQLAlchemy database setup
+import os
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Example: postgresql://postgres:password@db.host:5432/postgres
+SQLALCHEMY_DATABASE_URL = os.getenv("SUPABASE_DB_URL", "sqlite:///./lsw.db")
+
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL
+)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()

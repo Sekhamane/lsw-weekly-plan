@@ -1,0 +1,23 @@
+{
+  "appId": "com.leathersoleworks.lsw",
+  "appName": "Leather Sole Works",
+  "webDir": "build",
+  "bundledWebRuntime": false,
+  "platforms": {
+    "ios": {
+      "preferredBuild": "framework"
+    },
+    "android": {
+      "flavor": "production"
+    }
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "server": {
+    "androidScheme": "https",
+    "url": "https://api.leathersoleworks.co.ls"
+  }
+}

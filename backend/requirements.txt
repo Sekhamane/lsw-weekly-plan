@@ -1,0 +1,7 @@
+# requirements.txt for backend dependencies
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+passlib[bcrypt]
+python-jose

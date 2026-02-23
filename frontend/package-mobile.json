@@ -1,0 +1,29 @@
+{
+  "name": "lsw-mobile",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx",
+    "mobile:build": "npm run build && npx cap sync",
+    "mobile:ios": "npm run mobile:build && npx cap open ios",
+    "mobile:android": "npm run mobile:build && npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/app": "^5.0.0",
+    "@capacitor/core": "^5.0.0",
+    "@capacitor/device": "^5.0.0",
+    "@capacitor/network": "^5.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "axios": "^1.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.4.0"
+  }
+}
