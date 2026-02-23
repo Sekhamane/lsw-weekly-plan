@@ -1,7 +1,10 @@
 # requirements.txt for backend dependencies
 fastapi
-uvicorn
+uvicorn[standard]
 sqlalchemy
 pydantic
 passlib[bcrypt]
-python-jose
+python-jose[cryptography]
+python-dotenv
+psycopg2-binary
+python-multipart
