@@ -40,7 +40,17 @@ try:
     logger.info("Database tables created successfully!")
 except Exception as e:
     logger.error(f"Failed to create database tables: {str(e)}")
-    logger.info("App will still start, but database operations may fail")
+    logger.warning("App will still start, but database operations may fail")
+
+# Startup event for debugging
+@app.on_event("startup")
+async def startup_event():
+    logger.info("Backend API is starting up...")
+    logger.info(f"Frontend URL configured: {os.getenv('FRONTEND_URL', 'https://lsw-app.netlify.app')}")
+    
+@app.on_event("shutdown")
+async def shutdown_event():
+    logger.info("Backend API is shutting down...")
 
 # Include routers
 app.include_router(auth.router)
