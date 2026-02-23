@@ -60,7 +60,9 @@ git push -u origin main
    SUPABASE_DB_URL=postgresql://postgres:Sekhamane@2026@db.kxhlapnxgtrsexcjtvfs.supabase.co:5432/postgres
    ```
 5. Click Add
-6. Railway auto-deploys! 🚀
+6. **Railway auto-deploys with fixes!** 🚀
+
+**If build still fails, wait 2-3 minutes and check Railway logs for any remaining issues.**
 
 ### Step 4: Get Your Backend URL
 1. Go to "Deployments" tab
@@ -126,6 +128,7 @@ git push -u origin main
 - **No login button?** → Check browser console for JS errors
 - **API errors?** → Verify `REACT_APP_API_URL` is set correctly in Netlify
 - **Backend issues?** → Check Railway logs (click deployment)
+- **Railway build fails?** → Check if all dependencies are in `backend/requirements.txt` and `runtime.txt` specifies Python version
 
 ---
 
